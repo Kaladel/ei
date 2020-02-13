@@ -1,11 +1,5 @@
-@font-face{
-    font-family: 'Montserrat';
-    src: url(src/fonts/Montserrat/);
-}
-@font-face{
-    font-family: 'Maven pro';
-    src: url(src/fonts/maven-pro/);
-}
+@import "fonts.scss";
+
 p{
     font-family: 'Montserrat';
 }
