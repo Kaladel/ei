@@ -258,6 +258,7 @@ body{
         color: white;
         display: flex;
         flex-direction: column;
+
         // ---------------- BOUTON SUITE
         .endpage_buttons{
             background-color: $grisfonce;
@@ -305,29 +306,57 @@ body{
             padding: 30px;
             display: flex;
             flex-direction: column;
+
+            //---------------------------- IMAGE
             .endpage_overview{
                 display: none;
             }
+
+            //---------------------------- TEXTE
             .endpage_description{
+                margin-bottom: 20px;
                 h2{
-                    font-size: 1.5em;
+                    font-size: 1.2rem;
+                    text-align: center;
+                    display: flex;
+                    justify-content: center;
+                    &::before{
+                      content: "";
+                      background-image: url(src/images/pin.svg);
+                      background-size: contain;
+                      display: block;
+                      background-repeat: no-repeat;
+                      margin-right: 30px; 
+                      min-height: 20px;
+                      min-width: 20px; 
+                    }
                 }
                 &>p:first-child{
                     font-family: 'Museo regular';
                 }
+                p{
+                    font-size: 0.75rem;
+                }
             }
+
+            //---------------------------- SUPPORT
             .endpage_support{
+                margin-bottom: 20px;
                 p{
                     font-size: .75rem;
                 }
             }
+
+            //---------------------------- RESEAUX
             .endpage_reseaux{
                 order: 1;
                 padding: 30px 30px;
                 background-color: white;
                 border-radius: 25px;
+                display: flex;
+                flex-direction: column;
                 p{
-                    text-transform: uppercase;
+                    font-family :'Montserrat semibold';
                     color: $bleu;
                     margin-bottom: 30px;
                     margin-top: 0;
@@ -335,16 +364,32 @@ body{
                 a{
                     text-decoration: none;
                     color: $grisfonce;
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: center;
+                    margin-top: 15px;
                 }
-                &>a::before{
-                    content:''; //HASHTAG
+                & a:first-of-type::before{
+                    content:'';
+                    background-image: url(src/images/slack.svg);
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    display: block;
+                    height: 40px;
+                    width: 40px;
+                    margin-right: 20px;
                     color: $grisfonce;
                 }
-                &>a:last-of-type::before{
-                    content: ''; // TWITTER
-                    color: $grisfonce;
+                .fa-twitter{
+                    width: 30px;
+                    height: 30px;
+                    color: $grismenu;
+                    font-size: 3rem;
+                    margin-right: 30px;
                 }
             }
+
+            //---------------------------- STARTECH
             .endpage_logo-startech{
                 margin: 30px;
                 order: 1;
@@ -354,6 +399,10 @@ body{
 
     }    
 }
+
+
+
+// --------------------------        DEKSTOP       -----------------------------------------
 
 @media screen and (min-width:800px){
 
