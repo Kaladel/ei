@@ -25,9 +25,22 @@ h1, h2, h3, h4, h5, h6{
 }
 */
 
+@mixin bouton-neutre-ombre {
+    border: none;
+    box-shadow: 0px 0px 14px 2px rgba(40,51,59,0.9);
+}
+
 @mixin nomnop{
     margin: 0;
     padding: 0;
+}
+
+@mixin bg-degrade{
+    background-image: linear-gradient(0deg, rgba(244,152,179,0.3) 0%, rgba(0,216,255,0.3) 40%, rgba(40,51,59,0.5) 80%),
+    linear-gradient(0deg, rgba(40,51,59,0.7) 0%, rgba(40,51,59,0.7) 100%),
+    url(src/images/header.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 body{
@@ -40,11 +53,9 @@ body{
     .banner{
         @include nomnop;
         height:600px;
-        background-image: url(src/images/header.jpg);
-        background-position:right;
-        background-size: cover;
-        background-repeat: no-repeat;
         width: 100%;
+        @include bg-degrade();
+        background-position:right;
         div{
             h1{
                 display: float;
@@ -120,6 +131,7 @@ body{
                 background-color: $bleu;
                 padding: 15px 50px;
                 border-radius: 500px;
+                @include bouton-neutre-ombre();
             }
         }
     }
@@ -221,6 +233,7 @@ body{
     // ------------------------   BOUTON TICKET
     .visits_ticket{
         text-decoration: none;
+        @include bouton-neutre-ombre();
         font-family: 'Montserrat semibold';
         font-size: 1.2rem;
         background-color: $bleu;
@@ -228,13 +241,12 @@ body{
         padding: 20px 40px;
         color: $grisfonce;
         border-radius: 20px 20px 0 0;
-        //box-shadow : A FAIRE, me souviens plus de la commande;
         margin: 20px auto 0 auto;
     }
 
     // ------------------------  FOOTER
     .endpage{
-        background-image: url(src/images/fond-endapge-rochers-nuit-etoilee.jpg);
+        background-image: linear-gradient(0deg, rgba(40,51,59,0.7) 0%, rgba(40,51,59,0.7) 100%),url(src/images/fond-endapge-rochers-nuit-etoilee.jpg);
         background-size: cover;
         background-repeat: no-repeat;
         font-family: 'Montserrat regular';
@@ -298,10 +310,8 @@ body{
     // ----------------- HEADER
     // ------- BANNER
     .banner{
-        background-image: url(src/images/header.jpg);
-        background-repeat: no-repeat;
-        background-size: cover;
         padding-top: 20px;
+        @include bg-degrade();
         div:first-child{
             display: flex;
             justify-content: space-between;
@@ -344,6 +354,7 @@ body{
         div:nth-child(2){
             width:800px;
             margin: 50px auto;
+            padding-bottom: 30px;
             .banner_title{
                 color: $bleu;
                 font-family: 'Montserrat light';
@@ -371,13 +382,16 @@ body{
             display: flex;
             align-items: center;
             flex-direction: column;
+            position: relative;
             .banner_button{
-                margin-top: 50px;
+                position: absolute;
+                top: 200px;
                 text-transform: uppercase;
                 font-family: 'Montserrat semibold';
                 background-color: $bleu;
                 padding: 15px 50px;
                 border-radius: 500px;
+                @include bouton-neutre-ombre();
             }
         }
     }
@@ -399,7 +413,6 @@ body{
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: center;
         .visits_container{
             display: flex;
             flex-direction: row;
@@ -476,27 +489,33 @@ body{
         padding: 20px 40px;
         color: $grisfonce;
         border-radius: 20px 20px 0 0;
-        //box-shadow : A FAIRE, me souviens plus de la commande;
+        @include bouton-neutre-ombre();
         margin: 20px auto 0 auto;
     }
 
     // -------------------- FOOTER
     .endpage{
-        background-image: url(src/images/fond-endapge-rochers-nuit-etoilee.jpg);
+        background-image: linear-gradient(0deg, rgba(40,51,59,0.7) 0%, rgba(40,51,59,0.7) 100%), url(src/images/fond-endapge-rochers-nuit-etoilee.jpg);
         background-repeat: no-repeat;
         background-size: cover;
         font-family: 'Montserrat regular';
         color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         .endpage_grid{
-            max-width: 1200px;
+            max-width: 1000px;
             display: grid;
-            grid-template:  "presentation marge1 image image image"
-                            "marge2 marge2 marge2 marge2 marge2"
-                            "reseaux marge3 support marge4 startech";
+            grid-template:  "presentation image image"
+                            "reseaux support startech";
             .endpage_description{
                 grid-area: presentation;
+                max-width: 400px;
+                font-size: 0.8rem;;
+                margin-right: 30px;
                 h2{
-                    font-size: 1.5em;
+                    font-size: 1.2em;
                 }
                 &>p:first-child{
                     font-family: 'Museo regular';
@@ -504,12 +523,17 @@ body{
             } 
             .endpage_overview{
                 grid-area: image;
+                max-width: 400px;
+                align-self: center;
             }
             .endpage_reseaux{
                 grid-area: reseaux;
                 padding: 30px 30px;
                 background-color: white;
                 border-radius: 25px;
+                align-self: flex-end;
+                margin: 30px 30px 30px 0;
+                max-width: 350px;
                 p{
                     text-transform: uppercase;
                     color: $bleu;
@@ -531,14 +555,18 @@ body{
             }
             .endpage_support{
                 grid-area: support;
+                margin: 30px 0;
+                align-self: flex-end;
+
                 p{
                     font-size: .75rem;
                 }
             }
             .endpage_logo-startech{
                 grid-area:startech;
-                margin: 30px;
-                align-self:center;
+                margin: 30px 0;
+                justify-self: flex-end;
+                align-self:flex-end;
             }
         }
     }
