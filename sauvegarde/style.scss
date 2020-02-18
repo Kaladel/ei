@@ -1,0 +1,191 @@
+@import "fonts.scss";
+
+$bleu:#00D8FF;
+$rose:#D35B7E;
+$grisfonce:#31424D;
+$gristexte:#737B80;
+$jaune:#d4ce9a;
+$rosetxt:#f297b1;
+$blanc:#D6D6D6;
+/*$rosegrad:rgba(244,152,179,0.18);
+$bleucgrad:rgba(0,216,255,0.09);
+$bleufgrad:rgba(40,51,59,0.1);
+$grad-header:$rosegrad,$bleucgrad,$bleufgrad;
+$gradient-rb:linear-gradient(0deg, rgba(244,152,179,0.18) 0%, rgba(0,216,255,0.09) 50%, rgba(40,51,59,0.1) 100%);
+, linear-gradient(top,$grad-header)
+*/
+
+/*
+p{
+    font-family: 'Montserrat';
+}
+h1, h2, h3, h4, h5, h6{
+    font-family: 'Maven pro';
+}
+*/
+
+@mixin nomnop{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+}
+
+@media screen and (max-width: 800px) /*and (handheld)*/ {
+
+    // --------------------- HEADER ------------------
+    .banner{
+        @include nomnop;
+        height:400px;
+        background-image: url(src/images/header.jpg);
+        background-position:right;
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 100%;
+        div{
+            h1{
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+                @include nomnop;
+                // --------------------- LOGO
+                .banner_logo{
+                    width:190px;
+                    margin: 25px 40px;
+                }
+                .banner_title{
+                    display: none;
+                }
+            }
+            // -------------------- MENU DE NAVIGATION
+            .menu_nav{
+                color: $rosetxt;
+                @include nomnop;
+                .menu_container{
+                    @include nomnop;
+                    display: none;
+                    .menu_element{
+                        @include nomnop;
+                    }
+                }
+            }
+        }
+        // -------------------- PRESENTAION
+        .banner_title{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 50px;
+            flex-wrap: wrap;
+            color: $bleu;
+            font-family: 'Montserrat';
+            .banner_title-month{
+                display: block;
+                font-family: 'Maven pro';
+            }
+        }
+        .banner_description{
+            font-family: 'Maven pro';
+            color: $blanc;
+        }
+        .banner_button{
+            background-color: $bleu;
+            padding: 15px;
+            border-radius: 10px;
+
+        }
+    }
+
+    // -----------------      ACTIVITE         -------------------------
+    main{
+        h2{
+            color: $bleu;
+            font-family: 'Montserrat';
+            font-size: 24px;
+            text-align: center;
+        }
+    }
+    .visits{
+        @include nomnop;
+
+        .visits_container{
+            @include nomnop;
+
+            .visit_element{
+                @include nomnop;
+                .visit_overview{
+                    img{
+                        display:none;
+                    }
+                    .visit_title{
+                        color: $gristexte;
+                        @include nomnop;
+                        display: flex;
+                        flex-direction: column;
+                        font-family: 'Museo regular';
+                        strong{
+                            display: block;
+                            @include nomnop;
+                            font-family: 'Montserrat black';
+                        }
+                    }
+                    .visit_location{
+                        color: $bleu;
+                        font-family: 'Montserrat medium';
+                        @include nomnop;
+                        margin-top:10px;
+                    }
+                }
+                .visit_overview-description{
+                    //display:none;
+                    background-color: $grisfonce;
+                    margin: 20px;
+                    padding: 20px;
+                    .visit_title{
+                        color: $blanc;
+                        @include nomnop;
+                        display: flex;
+                        flex-direction: column;
+                        font-family: 'Museo regular';
+                        strong{
+                            display: block;
+                            @include nomnop;
+                            font-family: 'Montserrat black';
+                        }
+                    }
+                    .visit_subtitle{
+                        color:$jaune;
+                        font-family: 'Montserrat medium';
+                    }
+                    .visit_description{
+                        color: $blanc;
+                        font-family: 'Montserrat medium';
+                    }
+                    div{
+                        display:flex;
+                        justify-content: space-between;
+                        .fa-heart{
+                            color: $jaune;
+                        }
+                        a{
+                            text-decoration: none;
+                            font-family:'Montserrat medium';
+                            color: white;;
+                        }
+                    }
+                    a{
+                        display: float;
+                    }
+                }
+            }
+        }
+    }
+    
+}
+
+@media screen and (min-width:800px){
+
+}
