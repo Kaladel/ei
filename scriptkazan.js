@@ -22,3 +22,12 @@ btnBurger.addEventListener("click", function(){
     });
 
 })    
+
+let searchBtn = document.querySelector(".fa-search")
+let searchLabel = document.querySelector(".searchlabel")
+let searchInput = document.querySelector(".searchinput")
+
+searchBtn.addEventListener("click", function(){
+    searchLabel.classList.toggle("active")
+    searchInput.classList.toggle("active")
+}) 

@@ -81,6 +81,18 @@ body{
                 flex-direction: column;
                 // ---- ANIMATION
                 .animation-div{
+                    &:hover .animation-span{
+                        width: 3rem;
+                        transform: translateX(-1rem);
+                        &:nth-child(2){
+                            width: 3rem;
+                            transform: translateX(-1rem);
+                        }
+                        &:nth-child(3){
+                            width: 3rem;
+                            transform: translateX(-1rem);
+                        }
+                    }
                     a{
                         display: block;
                         margin: 40px 25px 0 0;
@@ -89,25 +101,31 @@ body{
                         z-index: 25;
                         position: relative;
                         .animation-span{
-                            transition-property: color, transform, position;
+                            transition-property: color, transform, position, width;
                             transition-duration: 0.5s;
                             transition-timing-function: ease-in-out;
                             display: block;
                             height: 0.5rem;
-                            width: 3rem;
+                            width: 2.5rem;
+                            transform: translateX(0.5rem);
                             background-color: $bleu;
                             margin: 0.3rem;
                             position: absolute;
                             &:nth-child(2){
                                 top: 1rem;
+                                width: 2.8rem;
+                                transform: translateX(0.2rem);
                             }
                             &:nth-child(3){
                                 top:2rem;
+                                width: 2rem;
+                                transform: translateX(1rem);
                             }
                             &.crossbar{
-                                background-color: black;
+                                background-color: $grismenu;
                                 transform: rotate(45deg);
                                 top: 1rem;
+                                width: 3rem;
                                 }
                             &.crossbar:nth-child(2){
                                 display: none;
@@ -161,7 +179,38 @@ body{
                                 font-family: 'Montserrat semibold';
                             }
                             &:last-child{
-                                display:none;
+                                order: -1;
+                                font-size: 1.5rem;
+                                padding: 0 40px 20px 0;
+                                text-decoration: none;
+                                color:$grismenu ;
+                                font-family: 'Montserrat semibold';
+                                label{
+                                    transition-duration: 0.5s;
+                                    background-color: $bleu;
+                                    width: 0;
+                                    height: 0;
+                                    display:none;
+                                    transition-property: background-color, width, height, z-index;
+                                    &.active{
+                                        display: block;
+                                        position: absolute;
+                                        background-color: $rose;
+                                        width: 100vw;
+                                        height: 100vh;
+                                        z-index: 200;
+                                    }
+                                }
+                                input{
+                                    transition-duration: 0.5s;
+                                    display: none;
+                                    transition-property: z-index;
+                                    &.active{
+                                        position: absolute;
+                                        display: block;
+                                        z-index: 200;
+                                    }
+                                }
                             }
                         }
                     }
