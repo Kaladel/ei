@@ -10,6 +10,8 @@ body{
 @media screen and (max-width: 768px) /*and (handheld)*/ {
 
 
+// ----------------- PAGE DE CONTACT
+@import "contactmobile.scss";
 
 // --------------------- HEADER ------------------
     @import "headermobile.scss";
@@ -268,6 +270,3 @@ body{
     }
 
 
-
-// ----------------- PAGE DE CONTACT
-@import "contactmobile.scss"

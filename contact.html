@@ -49,7 +49,7 @@
                 <!-- NAVIGATION -->
                 <nav class="banner_menu menu_nav hidden">
                     <ul class="menu_container">
-                        <li class="menu_element"><a href="#" title="Visites">Visits</a></li>
+                        <li class="menu_element"><a href="index.html" title="Visites">Visits</a></li>
                         <li class="menu_element"><a href="contact.html" title="Contact">Contact</a></li>
                         <li class="menu_element"><a href="#" title="Historique">History</a></li>
                         <li class="menu_element"><a href="#" title="Obtenir un ticket">GetTickets</a></li>
@@ -76,12 +76,12 @@
     </header>
     <!-- END HEADER  -->
 
-    <main>
-        <div>
-            <h2>Contact</h2>
-            <h3>Besoin d'un contact ?</h3>
+    <main class="contact_page">
+        <div class="contact_entete">
+            <h2 class="cont_entete-1">Contact</h2>
+            <h3 class="cont_entete-2">Besoin d'un contact ?</h3>
         </div>
-        <form action="">
+        <form action="post" class="contact_form" id="contact">
             <label for="prenom">Prénom</label>
             <input type="text" id="prenom" required>
             <label for="nom">Nom</label>
@@ -91,11 +91,12 @@
             <label for="objet">Objet</label>
             <input type="text" id="objet" required>
             <label for="message">Message</label>
-            <input type="textarea" id="message" required>
+            <textarea name="message" id="message" form="contact" required></textarea>
+            <input type="submit" value="Enjoy">
         </form>
 
     </main>
-
+<script src="scriptkazan.js"></script>
 </body>
 
 </html>
