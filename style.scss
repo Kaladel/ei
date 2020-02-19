@@ -7,12 +7,16 @@ body{
 
 @import "dekstop.scss";
 
-@media screen and (max-width: 800px) /*and (handheld)*/ {
+@media screen and (max-width: 768px) /*and (handheld)*/ {
 
-    // --------------------- HEADER ------------------
+
+
+// --------------------- HEADER ------------------
     @import "headermobile.scss";
 
-    // -----------------      ACTIVITE         -------------------------
+
+// -----------------      ACTIVITE         -------------------------
+// ------------ GENERAL
     main{
         display: flex;
         flex-direction: column;
@@ -24,14 +28,19 @@ body{
             text-align: center;
         }
     }
+// ------------ VISITES    
     .visits{
         @include nomnop;
 
         .visits_container{
             @include nomnop;
 
+
+// ------------- LES ELEMENTS li 
             .visit_element{
                 @include nomnop;
+
+// --------------- PREMIERE PARTIE, FIGCAPTION, etc
                 .visit_overview{
                     //background-color:$grisfond;
                     img{
@@ -56,6 +65,8 @@ body{
                         margin-top:10px;
                     }
                 }
+
+// ---------------- DEUXIEME PARTIE, DESCRIPTION ET AUTRE
                 .visit_overview-description{
                     //display:none;
                     background-color: $grisfonce;
@@ -81,6 +92,9 @@ body{
                         color: $blanc;
                         font-family: 'Montserrat medium';
                     }
+
+
+// ------------------------    LIENS ET LIKE DE FIN                 
                     div{
                         display:flex;
                         justify-content: space-between;
@@ -109,7 +123,9 @@ body{
         }
     }
 
-    // ------------------------   BOUTON TICKET
+
+
+// ------------------------   BOUTON TICKET
     .visits_ticket{
         text-decoration: none;
         @include bouton-neutre-ombre();
@@ -124,7 +140,10 @@ body{
         align-self: center;
     }
 
-    // ------------------------  ENDPAGE
+
+
+
+// ------------------------  ENDPAGE
     .endpage{
         background-image: linear-gradient(0deg, rgba(40,51,59,0.7) 0%, rgba(40,51,59,0.7) 100%),url(src/images/fond-endapge-rochers-nuit-etoilee.jpg);
         background-size: cover;
@@ -134,7 +153,8 @@ body{
         display: flex;
         flex-direction: column;
 
-        // ---------------- BOUTON SUITE
+
+// ---------------- BOUTON SUITE
         .endpage_buttons{
             background-color: $grisfonce;
             box-shadow: 0px 0px 14px 2px rgba(255,255,255,0.4);
@@ -176,7 +196,10 @@ body{
                 }
             }
         }
-        // ------------------ FOOTER
+
+
+
+// ------------------ FOOTER
         @import "footermobile.scss";
     }
 }

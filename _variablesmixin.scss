@@ -8,16 +8,19 @@ $blanc:#D6D6D6;
 $grismenu:#284e68;
 $grisfond:rgb(236, 236, 236);
 
+//A utiliser pour enlever les borduer et ajouter une ombre portée
 @mixin bouton-neutre-ombre {
     border: none;
     box-shadow: 0px 0px 14px 2px rgba(40,51,59,0.9);
 }
 
+//Pour enlever les margin et padding naturels des éléments
 @mixin nomnop{
     margin: 0;
     padding: 0;
 }
 
+//Pour le background de fond du header, avec ses dégradés compliqués
 @mixin bg-degrade{
     background-image: linear-gradient(0deg, rgba(244,152,179,0.3) 0%, rgba(0,216,255,0.3) 40%, rgba(40,51,59,0.5) 80%),
     linear-gradient(0deg, rgba(40,51,59,0.7) 0%, rgba(40,51,59,0.7) 100%),
