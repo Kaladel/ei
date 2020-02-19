@@ -83,14 +83,14 @@ body{
                 .animation-div{
                     &:hover .animation-span{
                         width: 3rem;
-                        transform: translateX(-1rem);
+                        transform: translateX(-.5rem);
                         &:nth-child(2){
                             width: 3rem;
-                            transform: translateX(-1rem);
+                            transform: translateX(-.5rem);
                         }
                         &:nth-child(3){
                             width: 3rem;
-                            transform: translateX(-1rem);
+                            transform: translateX(-.5rem);
                         }
                     }
                     a{
@@ -185,6 +185,14 @@ body{
                                 text-decoration: none;
                                 color:$grismenu ;
                                 font-family: 'Montserrat semibold';
+                                .fa-search{
+                                    &.active{
+                                        position: fixed;
+                                        z-index: 250;
+                                        top: 50.5vh;
+                                        right: 5rem;
+                                    }
+                                }
                                 label{
                                     transition-duration: 0.5s;
                                     background-color: $bleu;
@@ -194,11 +202,14 @@ body{
                                     transition-property: background-color, width, height, z-index;
                                     &.active{
                                         display: block;
-                                        position: absolute;
+                                        position: fixed;
                                         background-color: $rose;
                                         width: 100vw;
                                         height: 100vh;
+                                        top: 0;
+                                        left: 0;
                                         z-index: 200;
+                                        color: $rose;
                                     }
                                 }
                                 input{
@@ -206,7 +217,15 @@ body{
                                     display: none;
                                     transition-property: z-index;
                                     &.active{
-                                        position: absolute;
+                                        padding: 1rem;
+                                        color:$grismenu ;
+                                        font-family: 'Montserrat semibold';
+                                        width: 20rem;
+                                        height: 2rem ;
+                                        position: fixed;
+                                        border-style: none;
+                                        top: 50vh;
+                                        left: 18vw;
                                         display: block;
                                         z-index: 200;
                                     }
