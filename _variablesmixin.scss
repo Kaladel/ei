@@ -1,0 +1,27 @@
+$bleu:#00D8FF;
+$rose:#D35B7E;
+$grisfonce:#31424D;
+$gristexte:#737B80;
+$jaune:#d4ce9a;
+$rosetxt:#f297b1;
+$blanc:#D6D6D6;
+$grismenu:#284e68;
+$grisfond:rgb(236, 236, 236);
+
+@mixin bouton-neutre-ombre {
+    border: none;
+    box-shadow: 0px 0px 14px 2px rgba(40,51,59,0.9);
+}
+
+@mixin nomnop{
+    margin: 0;
+    padding: 0;
+}
+
+@mixin bg-degrade{
+    background-image: linear-gradient(0deg, rgba(244,152,179,0.3) 0%, rgba(0,216,255,0.3) 40%, rgba(40,51,59,0.5) 80%),
+    linear-gradient(0deg, rgba(40,51,59,0.7) 0%, rgba(40,51,59,0.7) 100%),
+    url(src/images/header.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
