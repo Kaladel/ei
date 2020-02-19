@@ -14,12 +14,12 @@ btnBurger.addEventListener("click", function(){
     //je lui indique de changer la classe de cache du menu de navigation
     sectionBurger.classList.toggle("hidden")
     //je lui dit que le menu doit prendre toute la place / ou pas.
-    if(body.classList.contains("noscroll")){
+    /*if(body.classList.contains("noscroll")){
         body.classList.remove("noscroll")
     }
     else{
         body.classList.add("noscroll")
-    }
+    }*/
     //j'ajoute la classe crossbar pour effectuer l'animation des span
     span.forEach(element => {
         element.classList.toggle("crossbar")
