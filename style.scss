@@ -39,12 +39,71 @@ body{
 // ------------- LES ELEMENTS li 
             .visit_element{
                 @include nomnop;
+                //transition-property: color;
+                //transition-duration: 0.5s;
+                &.ville_ext{
+                    &:hover .visit_location{
+                        color: $rosetxt ;
+                    }
+                    .visit_subtitle{
+                        color: $rosetxt;
+                    }
+                    .fa-heart{
+                        color:$rosetxt ;
+                    }
+                }
+                &.ville_centre{
+                    &:hover .visit_location{
+                        color: $jaune;
+                    }
+                    .visit_subtitle{
+                        color: $jaune;
+                    }
+                    .fa-heart{
+                        color: $jaune;
+                    }
+                }
+//----- QUAND EN SURVOL + ANIMATIONS  
+                
+                &:hover{
+                    .visit_overview{
+                        margin: 20px 20px 0 20px;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        background-color: $grisfonce;
+                        .visit_image{
+                            display: block;
+                            padding-top: 1rem;
+                        }
+                        figcaption{
+                            align-self: flex-start;
+                            order: -1;
+                            .visit_title{
+                                color: $blanc;
+                            }
+                        }
+                    }
+                    .visit_overview-description{
+                        display: block;
+                        .visit_title{
+                            display: none;
+                        }
+                    }
+                    .visit_overview-description{
+                        margin: 0 20px 20px 20px;
+                    }
+                }
 
 // --------------- PREMIERE PARTIE, FIGCAPTION, etc
                 .visit_overview{
-                    //background-color:$grisfond;
+                    margin: 20px;
+                    background-color:$grisfond;
+                    padding: 1rem;
                     img{
-                        display:none;
+                        display: none;
+                        width: 75vw;
+                        height: 75vh;
                     }
                     .visit_title{
                         color: $gristexte;
@@ -68,10 +127,15 @@ body{
 
 // ---------------- DEUXIEME PARTIE, DESCRIPTION ET AUTRE
                 .visit_overview-description{
-                    //display:none;
+                    display:none;
                     background-color: $grisfonce;
-                    margin: 20px;
                     padding: 20px;
+                   /* &.active{
+                        display: block;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                    }
                     .visit_title{
                         color: $blanc;
                         @include nomnop;
@@ -83,29 +147,26 @@ body{
                             @include nomnop;
                             font-family: 'Montserrat black';
                         }
-                    }
+                    }*/
                     .visit_subtitle{
-                        color:$jaune;
+                        @include nomnop;
                         font-family: 'Montserrat medium';
+                        }
                     }
                     .visit_description{
                         color: $blanc;
                         font-family: 'Montserrat medium';
                     }
 
-
 // ------------------------    LIENS ET LIKE DE FIN                 
                     div{
                         display:flex;
                         justify-content: space-between;
-                        .fa-heart{
-                            color: $jaune;
-                        }
                         .fa-heart::after{
                             content:'|';
                             font-size: 2em;
                             color: $blanc;
-                            margin: 0 150px;
+                            margin: 0 30vw;
                             
                         }
                         a{
@@ -116,6 +177,9 @@ body{
                     }
                     a{
                         display: float;
+                        &[title~=savoir]{
+                            display: none;
+                        }
                     }
                     // un a dont l'attribut est "en savoir plus ..."
                 }
@@ -202,4 +266,8 @@ body{
 // ------------------ FOOTER
         @import "footermobile.scss";
     }
-}
+
+
+
+// ----------------- PAGE DE CONTACT
+@import "contactmobile.scss"

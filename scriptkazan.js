@@ -43,3 +43,24 @@ searchBtn.addEventListener("click", function(){
     //j'aimerai aussi ajouter un placeholder dans l'input
     //searchInput.innerHTML = 'Entrez votre recherche';
 }) 
+
+
+/* En attendant, je passe sur du hover en css pour 
+voir si tout fonctionne correctement
+//On sélectionne l'encart de la figure, tous les encarts
+let visite = document.querySelectorAll(".visit_overview")
+let description = document.querySelectorAll(".visit_overviw-description")
+
+//On dit qu'on veut que pour chaque élément "visite"
+visite.forEach(elem => {
+    //si l'élément contient "active", on lui retire
+    ev.target.addEventListener("click", function(){
+        if (elem.classList.contains("active")){
+        elem.classList.remove("active");
+        //et on ajoute la classe active à la description
+        description.classList.add("active");
+        }
+        else {elem.classList.add("active")}
+    })
+})
+*/
