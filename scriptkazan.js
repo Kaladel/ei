@@ -75,7 +75,7 @@ const Main = function () {
 window.addEventlistener("load", Main)
 */
 
-
+// Merci Pierre !
 let allRequireds = document.querySelectorAll("[required]")
 let btn = document.querySelector("input[disabled]")
 //console.log(allRequireds)
