@@ -10,7 +10,7 @@ let body = document.querySelector(".menu")
 
 //J'ajoute une écoute d'événement sur le bloc qui 
 //s'occupe du menu en mobile
-btnBurger.addEventListener("click", function(){
+btnBurger.addEventListener("click", function () {
     //je lui indique de changer la classe de cache du menu de navigation
     sectionBurger.classList.toggle("hidden")
     //je lui dit que le menu doit prendre toute la place / ou pas.
@@ -25,7 +25,7 @@ btnBurger.addEventListener("click", function(){
         element.classList.toggle("crossbar")
     });
 
-})    
+})
 
 //On tente de faire pareil qu'au-dessus
 //mais avec le formulaire de recherche
@@ -36,44 +36,15 @@ let searchInput = document.querySelector(".searchinput")
 
 //pareil qu'en haut, on écoute et on change les classes
 //pour activer ou désactiver la chose
-searchBtn.addEventListener("click", function(){
+searchBtn.addEventListener("click", function () {
     searchBtn.classList.toggle("active")
     searchLabel.classList.toggle("active")
     searchInput.classList.toggle("active")
     //j'aimerai aussi ajouter un placeholder dans l'input
     //searchInput.innerHTML = 'Entrez votre recherche';
-}) 
-
-//Reprend tous les li d'activité pour en faire un array
-let screens = document.querySelectorAll(".visit_element");
-
-//écoute le mouvement de la fenêtre
-window.addEventListener("mouseover", function(){
-    //on dit que pour chaque li activité il agit sur l'écran
-    screens.forEach(screen =>{
-        screen.addEventListener("click", function(){
-            let topEl = screen.offsetTop;
-            window.scrollTo({top:topEl})
-        })
-        })
 })
 
-//https://cepegra.yo.fr/kazan_api/
-//cdnjs axios
-//https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js
-/*
-const Main = function () {
-      axios.get(url)
-      .then(response => {
-          XXXX = response.data
-      })
-      .then(Affiche)
-      .catch(function() {
-          alert('erreur de connexion')
-      })
-  }
-window.addEventlistener("load", Main)
-*/
+
 
 // Merci Pierre !
 let allRequireds = document.querySelectorAll("[required]")
@@ -82,14 +53,14 @@ let btn = document.querySelector("input[disabled]")
 let test = true
 
 allRequireds.forEach(required => {
-    required.addEventListener("change", function() {
+    required.addEventListener("change", function () {
         //alert('test')
         // test des autres champs
         // impossible de faire un break sur foreach => for
         for (let i = 0; i < allRequireds.length; i++) {
             let theField = allRequireds[i] //recupération d'un champ
-            
-            if ( theField.value == '') // si la valeur est vide
+
+            if (theField.value == '') // si la valeur est vide
             {
                 test = false
                 break //sortir de la boucle
@@ -108,7 +79,7 @@ allRequireds.forEach(required => {
             }
         }
 
-        if ( test == true) { 
+        if (test == true) {
             btn.removeAttribute('disabled') //active le btn en retirant attriut desabled
         }
         else {
@@ -117,4 +88,59 @@ allRequireds.forEach(required => {
         //  console.log(test)
     })
 });
-    
+
+
+let liste = document.querySelector(".visits_container")
+
+
+let Affiche = function () {
+    //liste.innerHTML = ''
+    visites.forEach(element => {
+        liste.innerHTML += `<li class="visit_element ville_centre">
+        <figure class="visit_overview">
+              <img src="${element.img}" alt="${element.text_img}" class="visit_image">
+              <figcaption>
+                  <h3 class="visit_title"><strong>${element.title}</strong>${element.title2}</h3>
+                  <p class="visit_location">${element.situation}</p>
+              </figcaption>
+          </figure>
+          <div class="visit_overview-description">
+              <h3 class="visit_title"><strong>${element.title}</strong>${element.title2}</h3>
+              <h4 class="visit_subtitle">${element.ss_titre}</h4>
+              <p class="visit_description">${element.texte}</p>
+              <div>
+                  <i class="fa fa-heart"></i>
+                  <a href="#" title="En lire plus">Read more</a>
+              </div>
+              <a href="#" title="En savoir plus">...</a>
+          </div>  
+      </li>`
+    });
+    //Reprend tous les li d'activité pour en faire un array
+    let screens = document.querySelectorAll(".visit_element");
+
+    //écoute le mouvement de la fenêtre
+    window.addEventListener("mouseover", function () {
+        //on dit que pour chaque li activité il agit sur l'écran
+        screens.forEach(screen => {
+            screen.addEventListener("click", function () {
+                let topEl = screen.offsetTop;
+                window.scrollTo({ top: topEl })
+            })
+        })
+    })
+}
+let url = "https://cepegra.yo.fr/kazan_api/"
+
+const Main = function () {
+    axios.get(url)
+        .then(response => {
+            visites = response.data.feed
+        })
+        .then(Affiche)
+        .catch(function () {
+            alert('erreur de connexion')
+        })
+}
+
+window.addEventListener("load", Main);
