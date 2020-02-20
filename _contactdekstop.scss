@@ -1,0 +1,101 @@
+@import "variablesmixin.scss";
+
+.contact_body{
+    background-image:linear-gradient(0deg, rgba(40,51,59,0.7) 0%, rgba(40,51,59,0.7) 100%),
+    url(src/images/fond-endapge-rochers-nuit-etoilee.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.contact_page{
+    height: 100%;
+    width: 800px;
+
+
+// ----------- TITRE DE LA PAGE    
+    .contact_entete{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        color: white;
+        .cont_entete-1{
+            color: white;
+            margin: 5rem 0 0 0;
+            font-size: 1.8rem;;
+            padding: 0;
+        }
+        .cont_entete-2{
+            font-family: 'Museo regular';
+            font-size: 1.2rem;
+            @include nomnop;
+            margin-bottom: 2rem;
+        }
+    }
+}
+.contact_form{
+    //FAIRE EN GRID ! 
+    /*
+    display:grid;
+    grid-template-area: "
+    */
+    display: flex;
+    flex-direction: column;
+    margin: 0 40px;
+    label{
+        font-family: 'Montserrat medium';
+        font-size: 1rem;
+        color: white;
+        margin: 0.5rem;
+        &.selected{
+            font-size: 0.7rem;
+            color: $gristexte;
+            font-family: 'Montserrat light';
+        }
+        &::after{
+            content: '*';
+            margin-left: 0.5rem;
+            color: $bleu;
+        }
+    }
+    input{
+        border: none;
+        border-bottom: solid 1px $gristexte;
+        background: none;
+        font-size: 1rem;
+        padding: 0.5rem;
+        color: white;
+        &:focus{
+            border-bottom: solid 1px $bleu;
+        }
+        &.rempli{
+            border-bottom: solid 1px $bleu;
+        }
+        &[type=submit]{
+            display: block;
+            border: solid 1px white;
+            border-radius: 100px;
+            padding: 1rem ;
+            font-family: 'Montserrat semibold';
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            width: 300px;
+            align-self: center;
+            margin: 50px;
+            color: white;
+            &[disabled]{
+                opacity: 0.3;
+            }
+        }
+    }
+    textarea{
+        border: 1px solid $gristexte;
+        height: 200px;
+        background: none;
+        color: white;
+        font-family: 'Montserrat light';
+        font-size: 1rem;
+        padding: 1rem ;
+    }
+}

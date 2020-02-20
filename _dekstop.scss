@@ -2,8 +2,10 @@
 
 @media screen and (min-width:800px){
 
-    // ----------------- HEADER
-    // ------- BANNER
+    @import "contactdekstop.scss";
+
+// ----------------- HEADER
+// ------- BANNER
     .banner{
         padding-top: 20px;
         @include bg-degrade();
@@ -23,7 +25,8 @@
                     display: none;
                 }
             }
-            // ------------------- NAVIGATION
+
+// ------------------- NAVIGATION
             .menu{
                 .animation-span{
                     display: none;
@@ -50,10 +53,11 @@
                 }
             }
         }
-        // -------------- DATES ET DESCRIPTION
+
+// -------------- DATES ET DESCRIPTION
         div:nth-child(2){
             width:800px;
-            margin: 50px auto;
+            margin: 50px auto 0 auto;
             padding-bottom: 30px;
             .banner_title{
                 color: $bleu;

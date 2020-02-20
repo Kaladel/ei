@@ -44,55 +44,6 @@ searchBtn.addEventListener("click", function () {
     //searchInput.innerHTML = 'Entrez votre recherche';
 })
 
-
-
-// Merci Pierre !
-let allRequireds = document.querySelectorAll("[required]")
-//let input = document.querySelectorAll("[name]")
-let btn = document.querySelector("input[disabled]")
-//console.log(allRequireds)
-let test = true
-
-allRequireds.forEach(required => {
-    required.addEventListener("change", function () {
-        //alert('test')
-        // test des autres champs
-        // impossible de faire un break sur foreach => for
-        for (let i = 0; i < allRequireds.length; i++) {
-            let theField = allRequireds[i] //recupération d'un champ
-
-            if (theField.value == '') // si la valeur est vide
-            {
-                test = false
-                break //sortir de la boucle
-            }
-            else if (theField.type == 'email') { //si pas vide mais email
-                //alert('email')
-                let expressionReguliere = /^(([^<>()[]\.,;:s@]+(.[^<>()[]\.,;:s@]+)*)|(.+))@(([[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}])|(([a-zA-Z-0-9]+.)+[a-zA-Z]{2,}))$/ //pattern
-                if (!expressionReguliere.test(theField.value)) { //si value différent du pattern
-                    test = false
-                    break //sortir boucle
-                }
-
-            }
-            else { //value ok
-                test = true
-                //ajouter la classe "rempli" pour changer la couleur du champ
-                //input.classList.toggle("rempli")
-            }
-        }
-
-        if (test == true) {
-            btn.removeAttribute('disabled') //active le btn en retirant attriut desabled
-        }
-        else {
-            btn.setAttribute('disabled', true) // désactive le btn en ajoutant l'attribut desabled
-        }
-        //  console.log(test)
-    })
-});
-
-
 let liste = document.querySelector(".visits_container")
 
 
