@@ -61,7 +61,7 @@
         }
         &[type=submit]{
             display: block;
-            border: solid 1px $gristexte;
+            border: solid 1px white;
             border-radius: 100px;
             padding: 1rem ;
             font-family: 'Montserrat semibold';
@@ -70,13 +70,9 @@
             width: 75vw;
             align-self: center;
             margin: 20px;
-            color: $gristexte;
-            &.disabled{
-                opacity: 0.5;
-            }
-            &.enabled{
-                color: white;
-                opacity: 1;
+            color: white;
+            &[disabled]{
+                opacity: 0.3;
             }
         }
     }
