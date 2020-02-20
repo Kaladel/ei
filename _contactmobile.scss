@@ -59,6 +59,9 @@
         &:focus{
             border-bottom: solid 1px $bleu;
         }
+        &.rempli{
+            border-bottom: solid 1px $bleu;
+        }
         &[type=submit]{
             display: block;
             border: solid 1px white;

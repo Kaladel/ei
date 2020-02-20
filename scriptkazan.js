@@ -48,6 +48,7 @@ searchBtn.addEventListener("click", function () {
 
 // Merci Pierre !
 let allRequireds = document.querySelectorAll("[required]")
+//let input = document.querySelectorAll("[name]")
 let btn = document.querySelector("input[disabled]")
 //console.log(allRequireds)
 let test = true
@@ -76,6 +77,8 @@ allRequireds.forEach(required => {
             }
             else { //value ok
                 test = true
+                //ajouter la classe "rempli" pour changer la couleur du champ
+                //input.classList.toggle("rempli")
             }
         }
 

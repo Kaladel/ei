@@ -4,6 +4,7 @@
     width: 100%;
     @include bg-degrade();
     background-position:right;
+    background-position-y: 0, 0, -200px;
     div:first-child{
         display: flex;
     }
